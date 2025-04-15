@@ -3,11 +3,17 @@
 
 var prompt = require('prompt-sync')();
 
-let Frase = prompt("Qual a frase: ");
+let frase = prompt("Digite uma frase: ");
 
+let palavras = frase.split(" ");
 
-
-Frase.reduce(function() {
+let maior = palavras.reduce(function(maior, atual) {
+  if (atual.length > maior.length) {
     
-    return novoAcumulador;
-  }, valorInicial);
+    return atual;
+
+  } else {
+    return maior;
+  }
+});
+console.log("A maior palavra e:", maior);
